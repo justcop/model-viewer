@@ -11,6 +11,7 @@ Once GitHub Pages is enabled, use `https://justcop.github.io/model-viewer/`.
 - **Model data:** paste ASCII STL/OBJ/OFF/PLY or mesh JSON into the editor.
 - **Shareable model URL:** `https://justcop.github.io/model-viewer/?url=https%3A%2F%2Fraw.githubusercontent.com%2Fjustcop%2Fmodel-viewer%2Fmain%2Fexamples%2Finfowindow-aa-bezel.stl`.
 - Rotate/zoom, toggle axes, fit, compare multiple meshes, or export a PNG snapshot.
+- **Try sample** button loads the real InfoWindow bezel STL from the same site.
 
 No model is uploaded to a server when loading a local file. Remote URL fetching occurs from the browser (so the file host will see the browser's request). GitHub Pages and models committed to this public repository are public.
 
@@ -18,10 +19,9 @@ No model is uploaded to a server when loading a local file. Remote URL fetching 
 
 ## Deploy
 
-1. Create a **public** GitHub repository named `model-viewer` under account `justcop`. This repository does not yet exist until created separately.
-2. Upload the **contents** of this folder (`index.html`, `viewer.html`, `make_viewer.py`, `.nojekyll`, `examples`, README) to the repository's default `main` branch. Alternatively clone and push it normally.
-3. In the repository open **Settings → Pages → Build and deployment → Source: Deploy from a branch**; select `main` and `/(root)`, then **Save**.
-4. Once GitHub reports the deployment successful, open `https://justcop.github.io/model-viewer/`.
+1. **Repository setup is complete:** files are committed to the public [`justcop/model-viewer`](https://github.com/justcop/model-viewer) repository on `main`.
+2. To publish the website, open **[Settings → Pages](https://github.com/justcop/model-viewer/settings/pages)**. Under **Build and deployment**, choose **Deploy from a branch**, select branch `main` and folder `/(root)`, and press **Save**. This is a one-time setting.
+3. Once GitHub Pages confirms deployment, open **https://justcop.github.io/model-viewer/**. Later updates to `main` publish automatically; there is no custom Actions workflow to maintain.
 
 This is a pure static site; no build, paid hosting or GitHub Actions workflow is required. The browser requires network access for the Plotly CDN unless you use an offline generated HTML.
 
